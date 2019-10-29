@@ -11,7 +11,7 @@ ExecReload=/usr/bin/tmux -S /tmp/tmux-mc/%i send-keys -t %i:0.0 reload Enter
 # Passing environment variables needs quotes in tmux
 ExecStart=/usr/bin/tmux -S /tmp/tmux-mc/%i new -ds %i 'LD_LIBRARY_PATH=. ./bedrock_server'
 ExecStartPre=/bin/mkdir -p /tmp/tmux-mc
-ExecStop=/opt/MC/MCstop.sh %i /tmp/tmux-mc/%i
+ExecStop=/home/minecraft/MCstop.sh %i /tmp/tmux-mc/%i
 # Thanks for the security agowa338
 PrivateUsers=true
 ProtectHome=true
@@ -22,7 +22,7 @@ ProtectSystem=full
 Restart=on-failure
 Type=forking
 User=mc
-WorkingDirectory=/opt/MC/%i
+WorkingDirectory=/home/minecraft/%i
 
 [Install]
 WantedBy=multi-user.target

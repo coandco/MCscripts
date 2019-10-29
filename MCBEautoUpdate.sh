@@ -8,7 +8,7 @@ syntax='`./MCBEautoUpdate.sh $server_dir [$service]`'
 
 case $1 in
 --help|-h)
-	echo 'If $server_dir/version '"isn't the same as the ZIP in ~mc, update and restart service of Minecraft Bedrock Edition server. If there's no service, make and chown mc "'$server_dir.'
+	echo 'If $server_dir/version '"isn't the same as the ZIP in ~minecraft, update and restart service of Minecraft Bedrock Edition server. If there's no service, make and chown mc "'$server_dir.'
 	echo "$syntax"
 	exit
 	;;
@@ -26,9 +26,9 @@ fi
 server_dir=$1
 # cat fails if there's no file $server_dir/version
 installed_ver=$(cat "$server_dir/version" 2> /dev/null || true)
-# There might be more than one ZIP in ~mc
+# There might be more than one ZIP in ~minecraft
 # ls fails if there's no match
-minecraft_zip=$(ls ~mc/bedrock-server-[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*\.zip 2> /dev/null | head -n 1 || true)
+minecraft_zip=$(ls ~minecraft/bedrock-server-[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*\.zip 2> /dev/null | head -n 1 || true)
 # Trim off $minecraft_zip after last .zip
 current_ver=$(basename "${minecraft_zip%.zip}")
 

@@ -3,7 +3,7 @@ Description=Automatically download Minecraft Bedrock Edition server ZIP
 
 [Service]
 # MCBEgetZIP.sh may read y asking if you agree to the EULA
-ExecStart=/bin/bash -c 'echo y | /opt/MC/MCBEgetZIP.sh'
+ExecStart=/bin/bash -c 'echo y | /home/minecraft/MCBEgetZIP.sh'
 KillMode=none
 Type=oneshot
 User=mc
