@@ -58,5 +58,5 @@ else
 	unzip -tq "$minecraft_zip"
 	unzip "$minecraft_zip" -d "$server_dir"
 	echo "$current_ver" | tee "$server_dir/version"
-	sudo chown -R mc:nogroup "$server_dir"
+	sudo chown -R minecraft:nogroup "$server_dir"
 fi
